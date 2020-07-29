@@ -120,13 +120,7 @@ spawnerFormDefaults:
     readOnly: true
 ```
 
-
-Until cert-manager is upgraded, make the following changes:
-  - Find and replace `cert-manager.io/v1alpha2` with `certmanager.k8s.io/v1alpha1`
-  - Find and replace `cert-manager.io/inject-ca-from` with `certmanager.k8s.io/inject-ca-from`
-
 In `kustomize/webhook/overlays/cert-manager/kustomizations.yaml`,
-
 ```yaml
 - name: cert_name
   objref:
