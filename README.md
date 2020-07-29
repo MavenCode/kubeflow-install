@@ -58,6 +58,27 @@ spec:
     istio: ingressgateway-kubeflow
 ```
 
+To make kubeflow run on ONLY https ingressgateway modify `kustomize/istio/base/kf-istio-resources.yaml`
+```yaml
+  apiVersion: networking.istio.io/v1alpha3
+  kind: Gateway
+  metadata:
+    name: kubeflow-gateway
+  ...
+  - hosts:
+    - '*'
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      privateKey: /etc/istio/ingressgateway-certs/tls.key
+      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+```
+
+make sure `istio-ingressgateway-certs` is created and attached to the kubeflow ns
+
 In `kustomize/api-service/base/kustomization.yaml`
 
 ```yaml
