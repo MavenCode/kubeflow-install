@@ -15,14 +15,6 @@ spec:
   - kustomizeConfig:
       overlays:
       - application
-      parameters:
-      - {}
-      - {}
-      - value: https://mavencode.oktapreview.com
-      - value: https://kubeflow.poc-gcp.cna.com/login/oidc
-      - value: https://mavencode.oktapreview.com/xxxx/oauth2/v2.0/authorize
-      - value: xxxxa
-      - value: xxxx
       repoRef:
         name: manifests
         path: application/application
@@ -173,13 +165,6 @@ spec:
     name: jupyter-web-app
   - kustomizeConfig:
       overlays:
-      - application
-      repoRef:
-        name: manifests
-        path: spark/spark-operator
-    name: spark-operator
-  - kustomizeConfig:
-      overlays:
       - istio
       - application
       - db
@@ -209,18 +194,6 @@ spec:
         name: manifests
         path: pytorch-job/pytorch-operator
     name: pytorch-operator
-  - kustomizeConfig:
-      overlays:
-      - application
-      parameters:
-      - name: usageId
-        value: <randomly-generated-id>
-      - name: reportUsage
-        value: "true"
-      repoRef:
-        name: manifests
-        path: common/spartakus
-    name: spartakus
   - kustomizeConfig:
       overlays:
       - istio

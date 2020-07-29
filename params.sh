@@ -6,7 +6,7 @@ export CLUSTER_NAME="${CLUSTER_NAME:=demo-01-default}"
 export OIDC_PROVIDER="${OIDC_PROVIDER:-default}"
 export OIDC_REDIRECT_URI="${OIDC_REDIRECT_URI:-default}"
 export OIDC_AUTH_URL="${OIDC_AUTH_URL:-default}"
-export CLIENT_ID="${CLIENT_ID:-default}"a
+export CLIENT_ID="${CLIENT_ID:-default}"
 export APPLICATION_SECRET="${APPLICATION_SECRET:-default}"
 export CONFIG_FILE="${CONFIG_FILE:-kfctl_k8s_istio.yaml}"
 
